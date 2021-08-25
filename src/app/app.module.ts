@@ -37,7 +37,10 @@ const appRoutes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(
       appRoutes,
-      {enableTracing:true}
+      {
+        enableTracing:true,
+        useHash:true
+      }
     )
   ],
   providers: [],
