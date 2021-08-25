@@ -10,11 +10,14 @@ import { PokemonComponent } from './pokemon/pokemon.component';
 import { LocationComponent } from './location/location.component';
 import { GamesComponent } from './games/games.component';
 import { PipesPipe } from './pipes/pipes.pipe';
+import { LocationPipe } from './pipes/location.pipe';
+import { ProfileComponent } from './profile/profile.component';
 
 const appRoutes: Routes = [
   {path:'', component:IndexComponent},
   {path: 'pokemon', component:PokemonComponent},
   {path: 'location', component:LocationComponent},
+  {path: 'profile/:id', component:ProfileComponent},
   {path: 'games', component:GamesComponent}
 ]
 @NgModule({
@@ -24,7 +27,9 @@ const appRoutes: Routes = [
     PokemonComponent,
     LocationComponent,
     GamesComponent,
-    PipesPipe
+    PipesPipe,
+    LocationPipe,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

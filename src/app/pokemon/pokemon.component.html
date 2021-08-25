@@ -35,10 +35,12 @@
 
 <div class="d-flex justify-content-around flex-md-wrap mt-4">
     <div class="card bg-light mb-3" *ngFor="let poke of pokemons | pipes:page:search" style="width: 20rem;">
-        <div class="card-header">Pokemon</div>
-        <div class="card-body">
-            <h4 class="card-title">{{poke.name}}</h4>
-            <img [src]="poke.pic" [alt]="poke.name">
-        </div>
+        <a style="text-decoration:none" routerLink="/profile/{{poke.id}}">
+            <div class="card-header">Pokemon</div>
+            <div class="card-body">
+                <h4 class="card-title">{{poke.name}}</h4>
+                <img [src]="poke.pic" [alt]="poke.name">
+            </div>
+        </a>
     </div>
 </div>

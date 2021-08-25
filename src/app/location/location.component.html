@@ -1,1 +1,22 @@
-<p>location works!</p>
+<h1 class="mt-5">Listado de Locaciones</h1>
+<hr>
+
+<input type="text" class="form-control mb-2" placeholder="Buscar location" #txtSearch
+    (keyup)="onSearchPokemon( txtSearch.value )" />
+
+
+<button class="btn btn-primary" (click)="prevPage()">
+    Anteriores
+</button>
+&nbsp;
+<button class="btn btn-primary" (click)="nextPage()" [disabled]="(locations | location:page:search).length === 0">
+    Siguientes
+</button>
+<div class="d-flex justify-content-around flex-md-wrap mt-4">
+    <div class="card bg-light mb-3" *ngFor="let local of locations | location:page:search" style="width: 20rem;">
+        <div class="card-header">Location</div>
+        <div class="card-body">
+            <h4 class="card-title">{{local.name}}</h4>
+        </div>
+    </div>
+</div>
